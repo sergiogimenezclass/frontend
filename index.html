@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presentaciones</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            padding: 50px 40px;
+        }
+
+        .header {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 32px;
+            color: #1a1a1a;
+            margin-bottom: 8px;
+            font-weight: 600;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 16px;
+            font-weight: 400;
+        }
+
+        .links-section {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .link-item {
+            display: flex;
+            align-items: center;
+            padding: 16px 20px;
+            background: #f6f8fa;
+            border: 1px solid #e1e4e8;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #0366d6;
+            font-size: 16px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            cursor: pointer;
+        }
+
+        .link-item:hover {
+            background: #e6f2ff;
+            border-color: #0366d6;
+            transform: translateX(4px);
+            box-shadow: 0 4px 12px rgba(3, 102, 214, 0.15);
+        }
+
+        .link-item::before {
+            content: "→";
+            margin-right: 12px;
+            font-weight: bold;
+            transition: margin-right 0.2s ease;
+        }
+
+        .link-item:hover::before {
+            margin-right: 16px;
+        }
+
+        footer {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e1e4e8;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 40px 20px;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .link-item {
+                padding: 14px 16px;
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Presentaciones</h1>
+            <p class="subtitle">Material de clase y recursos educativos</p>
+        </div>
+
+        <section class="links-section">
+            <a href="formularios-slide.html" class="link-item">Clase de Formularios</a>
+        </section>
+
+        <footer>
+            <p>Recursos disponibles para consulta</p>
+        </footer>
+    </div>
+</body>
+</html>
