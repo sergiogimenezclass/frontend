@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase: Formularios Pro - HTML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&family=Fira+Code&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0f172a;
+            color: #f8fafc;
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+        }
+
+        .slide {
+            display: none;
+            height: 100vh;
+            width: 100vw;
+            padding: 2rem;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            animation: slideIn 0.3s ease-out;
+        }
+
+        .slide.active {
+            display: flex;
+        }
+
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: scale(0.98);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        code {
+            font-family: 'Fira Code', monospace;
+        }
+
+        .glass-card {
+            background: rgba(30, 41, 59, 0.6);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .code-container {
+            background: #010409;
+            border: 1px solid #30363d;
+        }
+
+        .highlight-blue {
+            color: #3b82f6;
+            font-weight: 800;
+        }
+
+        .highlight-emerald {
+            color: #10b981;
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="presentation-root">
+        <!-- Diapositiva 1: Portada -->
+        <section class="slide active">
+            <h1 class="text-7xl font-black text-blue-500 mb-4 text-center tracking-tighter uppercase">Formularios Pro
+            </h1>
+            <p class="text-2xl text-slate-400 font-medium italic">Atributos Avanzados y Proyecto Login</p>
+            <div class="mt-12 flex gap-4">
+                <span
+                    class="px-4 py-1 bg-blue-500/20 text-blue-400 rounded-full text-sm font-bold border border-blue-500/30">HTML5</span>
+                <span
+                    class="px-4 py-1 bg-emerald-500/20 text-emerald-400 rounded-full text-sm font-bold border border-emerald-500/30">Nivel
+                    Inicial</span>
+            </div>
+            <p class="mt-8 text-slate-500 text-sm animate-pulse">Navegá con las flechas ← →</p>
+        </section>
+
+        <!-- Diapositiva 2: Autocomplete -->
+        <section class="slide">
+            <div class="max-w-4xl w-full">
+                <h2 class="text-4xl font-black mb-8 text-blue-400 flex items-center gap-4">
+                    <span
+                        class="w-12 h-12 bg-blue-600 rounded-lg flex items-center justify-center text-white text-2xl">1</span>
+                    Autocomplete: Facilitando la vida
+                </h2>
+                <p class="text-xl mb-6 text-slate-300">No es solo <code>on</code> u <code>off</code>. Podés ser muy
+                    específico:</p>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-8">
+                    <div class="glass-card p-5 rounded-xl border-l-4 border-blue-500">
+                        <code class="text-blue-300">autocomplete="email"</code>
+                        <p class="text-sm mt-1">El navegador sugiere correos guardados.</p>
+                    </div>
+                    <div class="glass-card p-5 rounded-xl border-l-4 border-blue-500">
+                        <code class="text-blue-300">autocomplete="current-password"</code>
+                        <p class="text-sm mt-1">Ideal para formularios de login.</p>
+                    </div>
+                </div>
+                <div class="code-container p-6 rounded-xl shadow-2xl">
+                    <pre
+                        class="text-blue-400"><code>&lt;input type="email" autocomplete="email" required&gt;</code></pre>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 3: Atributo Title -->
+        <section class="slide">
+            <div class="max-w-4xl w-full">
+                <h2 class="text-4xl font-black mb-8 text-amber-400 flex items-center gap-4">
+                    <span
+                        class="w-12 h-12 bg-amber-600 rounded-lg flex items-center justify-center text-white text-2xl">2</span>
+                    Ayuda Nativa: El atributo Title
+                </h2>
+                <p class="text-xl mb-6 text-slate-300 italic">Che, usá esto para dar pistas sin ensuciar el diseño:</p>
+                <div class="glass-card p-8 rounded-2xl mb-8">
+                    <p class="mb-4">El atributo <code class="text-amber-400">title</code> crea un "tooltip" (un
+                        cartelito) que aparece cuando el usuario deja el mouse quieto sobre el campo.</p>
+                    <pre class="text-emerald-400 text-lg"><code>&lt;input type="password" 
+       title="La clave debe tener números y letras" 
+       required&gt;</code></pre>
+                </div>
+                <p class="text-slate-500">Es el complemento perfecto para el <code
+                        class="text-white">placeholder</code>.</p>
+            </div>
+        </section>
+
+        <!-- Diapositiva 4: Semántica -->
+        <section class="slide">
+            <div class="max-w-4xl w-full">
+                <h2 class="text-4xl font-black mb-8 text-purple-400 flex items-center gap-4">
+                    <span
+                        class="w-12 h-12 bg-purple-600 rounded-lg flex items-center justify-center text-white text-2xl">3</span>
+                    Fieldset y Legend
+                </h2>
+                <div class="code-container p-8 rounded-2xl mb-6 shadow-2xl">
+                    <pre class="text-blue-300 text-xl"><code>&lt;fieldset&gt;
+  &lt;legend&gt;Acceso al sistema&lt;/legend&gt;
+  &lt;!-- Aquí van los inputs --&gt;
+&lt;/fieldset&gt;</code></pre>
+                </div>
+                <p class="text-slate-400 text-center">Agrupá lógicamente los datos para que el navegador entienda el
+                    contexto.</p>
+            </div>
+        </section>
+
+        <!-- Diapositiva 5: Tipos de Botones -->
+        <section class="slide">
+            <div class="max-w-4xl w-full">
+                <h2 class="text-4xl font-black mb-8 text-pink-400 flex items-center gap-4 text-white">
+                    <span
+                        class="w-12 h-12 bg-pink-600 rounded-lg flex items-center justify-center text-white text-2xl">4</span>
+                    Botones: ¿Cuál es la diferencia?
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8 text-center">
+                    <div class="glass-card p-6 rounded-2xl border-b-4 border-emerald-500">
+                        <span class="block font-black text-emerald-400 mb-2">type="submit"</span>
+                        <p class="text-sm">Envía el formulario al servidor. Es la acción por defecto.</p>
+                    </div>
+                    <div class="glass-card p-6 rounded-2xl border-b-4 border-amber-500">
+                        <span class="block font-black text-amber-400 mb-2">type="button"</span>
+                        <p class="text-sm">No hace NADA solo. Se usa para disparar acciones con JavaScript.</p>
+                    </div>
+                </div>
+                <div class="p-6 bg-slate-900 rounded-xl border border-slate-700">
+                    <p class="text-slate-400 text-center italic text-sm">"Si usás un &lt;button&gt; adentro de un form
+                        sin aclararle el tipo, el navegador va a asumir que es de tipo submit."</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 6: Desafío Final Actualizado -->
+        <section class="slide">
+            <div class="max-w-4xl w-full">
+                <div
+                    class="glass-card p-10 rounded-[2.5rem] border-2 border-blue-500/50 shadow-[0_0_60px_rgba(59,130,246,0.15)]">
+                    <h2 class="text-4xl font-black mb-6 text-white text-center">Desafío: Login Page Final</h2>
+                    <ul class="space-y-4 text-slate-200">
+                        <li class="flex items-center gap-4 bg-slate-800/50 p-3 rounded-lg border-l-4 border-blue-500">
+                            <span>Estructura con <code class="text-blue-300">fieldset</code> y <code
+                                    class="text-blue-300">legend</code>.</span>
+                        </li>
+                        <li class="flex items-center gap-4 bg-slate-800/50 p-3 rounded-lg border-l-4 border-blue-500">
+                            <span>Agregá <code class="text-blue-300">autocomplete="email"</code> al usuario.</span>
+                        </li>
+                        <li class="flex items-center gap-4 bg-slate-800/50 p-3 rounded-lg border-l-4 border-blue-500">
+                            <span>Sumá un <code class="text-blue-300">title</code> de ayuda en la contraseña.</span>
+                        </li>
+                        <li class="flex items-center gap-4 bg-slate-800/50 p-3 rounded-lg border-l-4 border-blue-500">
+                            <span>Incluí un botón <code class="text-blue-300">type="submit"</code> para entrar.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Diapositiva 7: Cierre -->
+        <section class="slide">
+            <h1 class="text-7xl font-black mb-6 text-white uppercase tracking-tighter">¡Listo para codear!</h1>
+            <p class="text-2xl text-slate-400">Armá este login y fijate cómo reacciona el navegador.</p>
+        </section>
+    </div>
+
+    <!-- Controles de Navegación -->
+    <div class="fixed bottom-10 left-0 right-0 flex justify-center items-center gap-12 z-50">
+        <button id="prevBtn"
+            class="p-4 rounded-2xl glass-card hover:bg-slate-700 transition-all disabled:opacity-20 shadow-xl">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m15 18-6-6 6-6" />
+            </svg>
+        </button>
+
+        <div class="flex flex-col items-center">
+            <span id="counter" class="text-sm font-black text-slate-500 mb-3 tracking-[0.4em]">01 / 07</span>
+            <div class="w-64 h-2 bg-slate-800 rounded-full overflow-hidden shadow-inner">
+                <div id="progress" class="h-full bg-blue-600 transition-all duration-500 ease-out" style="width: 14%">
+                </div>
+            </div>
+        </div>
+
+        <button id="nextBtn"
+            class="p-4 rounded-2xl bg-blue-600 hover:bg-blue-500 transition-all shadow-[0_10px_20px_rgba(37,99,235,0.4)]">
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m9 18 6-6-6-6" />
+            </svg>
+        </button>
+    </div>
+
+    <script>
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const counter = document.getElementById('counter');
+        const progress = document.getElementById('progress');
+
+        let currentSlide = 0;
+
+        function updateUI() {
+            slides.forEach((s, i) => s.classList.toggle('active', i === currentSlide));
+
+            const num = currentSlide + 1;
+            counter.innerText = `${num.toString().padStart(2, '0')} / ${slides.length.toString().padStart(2, '0')}`;
+            progress.style.width = `${(num / slides.length) * 100}%`;
+
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentSlide > 0) { currentSlide--; updateUI(); }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentSlide < slides.length - 1) { currentSlide++; updateUI(); }
+        });
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowRight' || e.key === ' ') nextBtn.click();
+            if (e.key === 'ArrowLeft') prevBtn.click();
+        });
+
+        updateUI();
+    </script>
+</body>
+
+</html>
